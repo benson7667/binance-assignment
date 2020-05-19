@@ -11,23 +11,23 @@ import { StyledDashboard } from "./styles";
 const Dashboard = () => {
   return (
     <StyledDashboard>
-      <div class="top">
+      <div className="top">
         <Header />
       </div>
 
-      <div class="left">
+      <div className="left">
         <CryptoTrade />
       </div>
 
-      <div class="center">
+      <div className="center">
         <CryptoGraph />
       </div>
 
-      <div class="right">
+      <div className="right">
         <CryptoPrices />
       </div>
 
-      <div class="bottom">
+      <div className="bottom">
         <CryptoOrder />
       </div>
     </StyledDashboard>

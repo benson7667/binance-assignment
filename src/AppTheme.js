@@ -2,8 +2,9 @@ import React from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 
 const theme = {
-  primaryColor: "#212833",
+  primaryColor: "#16191d",
   accentColor: "#f0b90b",
+  scaffoldBackgroundColor: "#3c3c3c",
 };
 
 const GlobalStyle = createGlobalStyle`
@@ -12,6 +13,10 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     outline: 0;
     box-sizing: border-box;
+  }
+
+  body {
+      background-color: ${(props) => props.theme.scaffoldBackgroundColor}
   }
 `;
 

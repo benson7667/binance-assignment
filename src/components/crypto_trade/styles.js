@@ -8,8 +8,13 @@ export const StyledCryptoTrade = styled.div`
   gap: 4px;
 
   & .box1,
-  .box2 {
+  & .box2 {
     color: ${(props) => props.theme.accentColor};
     background-color: ${(props) => props.theme.primaryColor};
+  }
+
+  @media screen and (max-width: 960px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
   }
 `;
