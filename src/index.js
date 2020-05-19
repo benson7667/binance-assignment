@@ -4,10 +4,8 @@ import App from "./App";
 import AppTheme from "./AppTheme";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <AppTheme>
-      <App />
-    </AppTheme>
-  </React.StrictMode>,
+  <AppTheme>
+    <App />
+  </AppTheme>,
   document.getElementById("root")
 );

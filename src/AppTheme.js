@@ -1,11 +1,6 @@
-import React from "react";
+import React, { createContext, useReducer } from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
-
-const theme = {
-  primaryColor: "#16191d",
-  accentColor: "#f0b90b",
-  scaffoldBackgroundColor: "#3c3c3c",
-};
+import { initialState, reducer } from "./reducers/themeReducer";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -20,11 +15,18 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+export const ThemeContext = createContext();
+
 const AppTheme = (props) => {
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const { currentTheme } = state;
+
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      {props.children}
+    <ThemeProvider theme={currentTheme}>
+      <ThemeContext.Provider value={{ ...state, dispatch }}>
+        <GlobalStyle />
+        {props.children}
+      </ThemeContext.Provider>
     </ThemeProvider>
   );
 };
